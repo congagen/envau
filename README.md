@@ -9,3 +9,4 @@ Website: https://abstraqata.com/envau
 * Install CocoaPods
 * Run ```pod install``` in the root directory
 * Open Envau.xcworkspace (Currently broken awaiting AudioKit update)
+
