@@ -5,17 +5,10 @@ ENVAU name is a iOS app that enables composition and playback of positional soun
 Website: https://abstraqata.com/envau
 
 
-## Prerequisites
-* Install CocoaPods if missing
+## Developing
+* Install CocoaPods
 * Run ```pod install``` in the root directory
-
-
-## Usage
 * Open Envau.xcworkspace (Currently broken awaiting AudioKit update)
-
-
-## Contact
-If you want to contact me you can reach me at mail@timsandgren.com
 
 
 ## License
