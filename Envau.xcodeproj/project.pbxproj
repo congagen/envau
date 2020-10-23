@@ -344,7 +344,6 @@
 			buildConfigurationList = 310ECF611E9E04C300B039DA /* Build configuration list for PBXNativeTarget "Envau" */;
 			buildPhases = (
 				4DB62BF9BFFE092A850B12C8 /* [CP] Check Pods Manifest.lock */,
-				E88492E7F253124CB539D4CD /* [CP] Prepare Artifacts */,
 				310ECF4B1E9E04C300B039DA /* Sources */,
 				310ECF4C1E9E04C300B039DA /* Frameworks */,
 				310ECF4D1E9E04C300B039DA /* Resources */,
@@ -452,7 +451,6 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Envau/Pods-Envau-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/cocoapods-artifacts-${CONFIGURATION}.txt",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
@@ -464,24 +462,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Envau/Pods-Envau-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E88492E7F253124CB539D4CD /* [CP] Prepare Artifacts */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Envau/Pods-Envau-artifacts.sh",
-				"${PODS_ROOT}/AudioKit/AudioKit.xcframework",
-			);
-			name = "[CP] Prepare Artifacts";
-			outputPaths = (
-				"${BUILT_PRODUCTS_DIR}/cocoapods-artifacts-${CONFIGURATION}.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Envau/Pods-Envau-artifacts.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -664,9 +644,9 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Envau/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1;
+				MARKETING_VERSION = 1.127.5997;
 				"OTHER_LDFLAGS[arch=*]" = "-lstdc++";
 				PRODUCT_BUNDLE_IDENTIFIER = com.abstraqata.envau;
 				PRODUCT_NAME = Envau;
@@ -694,9 +674,9 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Envau/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1;
+				MARKETING_VERSION = 1.127.5997;
 				"OTHER_LDFLAGS[arch=*]" = "-lstdc++";
 				PRODUCT_BUNDLE_IDENTIFIER = com.abstraqata.envau;
 				PRODUCT_NAME = Envau;

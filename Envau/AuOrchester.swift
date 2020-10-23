@@ -85,11 +85,10 @@ class AuOrchester {
 
         do {
             if active {
-                try AudioKit.start()
+                try AKManager.start()
             } else {
-                try AudioKit.stop()
+                try AKManager.stop()
             }
-            
         } catch {
             print("Error: \(error)")
         }
@@ -221,14 +220,14 @@ class AuOrchester {
         // Stereo
         summingReverb = AKCostelloReverb(dryWetSummingMixer)
         dryWetMixerSummingReverb = AKDryWetMixer(dryWetSummingMixer!, summingReverb!)
-        AudioKit.output = dryWetMixerSummingReverb
+        AKManager.output = dryWetMixerSummingReverb
         
         for i in 0...256 {
             playedKeys[i] = false
         }
         
         do {
-            try AudioKit.start()
+            try AKManager.start()
         } catch {
             print("Error: \(error)")
         }
