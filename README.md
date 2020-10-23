@@ -4,7 +4,7 @@ ENVAU name is a iOS app that enables composition and playback of positional soun
 
 - Website:  https://abstraqata.com/envau
 - AppStore: https://apps.apple.com/us/app/envau/id1202922995
-- History:  https://bitbucket.org/tmsnd/envau
+- Old Repo: https://bitbucket.org/tmsnd/envau
 
 
 ## Developing
