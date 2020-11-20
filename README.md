@@ -20,6 +20,6 @@ ENVAU name is a iOS app that enables composition and playback of positional soun
 	- Scroll and tap to edit notes
 	- Long-press on map to edit sphere radius
 	- Tap coordinates to delete or clear
-- Tap map to deselect spheres
+- Tap map to deselect
 
 ( Press and drag to alter playback location when in touch mode )
