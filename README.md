@@ -7,7 +7,6 @@ ENVAU name is a iOS app that enables composition and playback of positional soun
 
 ## Developing
 
-### iOS App
 * Install CocoaPods
 * Run ```pod install``` in the root directory
 * Open Envau.xcworkspace
