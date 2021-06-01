@@ -15,34 +15,39 @@ class AuOrchester {
     lazy var keyItems: Results<RLM_Note>?            = RLM_AsyncData().async_keyData()
     
     var playedKeys = [Int: Bool]()
+    let engine = AudioEngine()
 
     // Instruments
-    let fmOscBankKey = AKFMOscillatorBank()
-    let fmOscPreview = AKFMOscillatorBank()
-    var instrumentMixer = AKMixer()
+    let fmOscBankKey = Synth()
+    let fmOscPreview = Synth()
+    var instrumentMixer = Mixer()
     
 //    TODO: Noise
 //    let wNoise = AKWhiteNoise()
 //    var noiseFilter = AKResonantFilter()
     
     // Misc FX
-    var fxPhaser: AKPhaser?
-    var dryWetMixerPhaser: AKDryWetMixer?
+    var fxPhaser: Phaser?
+    var dryWetMixerPhaser: DryWetMixer?
     
-    var fxSummingMixer: AKMixer?
-    var dryWetSummingMixer: AKDryWetMixer?
+    var fxSummingMixer: Mixer?
+    var dryWetSummingMixer: DryWetMixer?
     
-    var summingReverb: AKCostelloReverb?
-    var dryWetMixerSummingReverb: AKDryWetMixer?
+    var summingReverb: CostelloReverb?
+    var dryWetMixerSummingReverb: DryWetMixer?
 
     // Composite Mix
-    var masterMixer = AKMixer()
+    var masterMixer = Mixer()
+    
+    var currentNotesPlaying = [Int: [Int]]()
     
     
 // -----------------------------------------------------------------------------
 
     
     @objc func stopKey(_ timer: Timer) {
+        print("stopKey")
+        
         if timer.isValid{
             let stopNote = timer.userInfo! as! Int
             fmOscBankKey.stop(noteNumber: MIDINoteNumber(stopNote))
@@ -54,6 +59,8 @@ class AuOrchester {
     
     
     func stopKeyByNum(stopNote: Int) {
+        print("stopKeyByNum")
+        
         fmOscBankKey.stop(noteNumber: MIDINoteNumber(stopNote))
         fmOscPreview.stop(noteNumber: MIDINoteNumber(stopNote))
     }
@@ -85,9 +92,7 @@ class AuOrchester {
 
         do {
             if active {
-                try AKManager.start()
-            } else {
-                try AKManager.stop()
+                try engine.start()
             }
         } catch {
             print("Error: \(error)")
@@ -133,8 +138,8 @@ class AuOrchester {
                     
                     if sessionData != nil {
                         if sessionData![0].ampFromDistance && sessionData![0].holdNotes {
-                            let divDistance = abs( Double(b.currentDistance + 0.001) / Double(b.activeRadius + 0.001) )
-                            velo = Int(abs(pitchAmp - (pitchAmp * divDistance)))
+                            let divDistance = abs( Double(Double(b.currentDistance) + Double(0.001)) / Double(Double(b.activeRadius) + Double(0.001)) )
+                            velo = Int(abs(pitchAmp - (pitchAmp * Int(divDistance))))
                         } else {
                             velo = pitchAmp
                         }
@@ -148,19 +153,42 @@ class AuOrchester {
                 }
             }
         }
+        
+        for k in 0...127 {
+            if !(notesToPlay.keys.contains(k)) {
+                stopKeyByNum(stopNote: k)
+                currentNotesPlaying[k] = []
+            }
+        }
+        
+//        for ub in beaconDataRLM! {
+//            if !activeBeacons.contains(ub) {
+//                for k in ub.activeNotes {
+//                    if !(notesToPlay.keys.contains(k.noteValue)) {
+//                        stopKeyByNum(stopNote: k.noteValue)
+//                        currentNotesPlaying[k.noteValue] = []
+//                    }
+//                }
+//            }
+//        }
     
-        liftAllKeys()
+        //liftAllKeys()
       
         for n in notesToPlay.keys {
             if sessionData != nil {
                 
-                if sessionData![0].avgVeloFromDuplicateNotes {
-                    let avgVel = (notesToPlay[n]?.reduce(0, +))! / (notesToPlay[n]?.count)!
-                    playKey(keyVal: n, velo: avgVel)
-                } else {
+//                if sessionData![0].avgVeloFromDuplicateNotes {
+//                    let avgVel = (notesToPlay[n]?.reduce(0, +))! / (notesToPlay[n]?.count)!
+//                    playKey(keyVal: n, velo: avgVel)
+//                } else {
+//
+//                }
+                if currentNotesPlaying[n] == [] {
                     playKey(keyVal: n, velo: (notesToPlay[n]?.max())!)
+                    currentNotesPlaying[n] = notesToPlay[n]
+                } else {
+                    // TODO: Only update velocity?
                 }
-                
             }
         }
         
@@ -177,26 +205,28 @@ class AuOrchester {
             if (sessionData!.count > 0) {
                 
                 if !sessionData![0].playbackPaused {
-                    instrumentMixer.volume = sessionData![0].masterVolume
+                    instrumentMixer.volume = Float(sessionData![0].masterVolume)
                 } else {
                     instrumentMixer.volume = 0
                 }
                 
-                fxPhaser?.notchWidth = sessionData![0].audioFxAmoutA
-                dryWetSummingMixer?.balance = sessionData![0].dryWetFxMix
+                fxPhaser?.notchWidth = Float(sessionData![0].audioFxAmoutA)
+                dryWetSummingMixer?.balance = Float(sessionData![0].dryWetFxMix)
 
-                summingReverb?.rampDuration = 2.0
-                summingReverb?.feedback = 0.9
-                dryWetMixerSummingReverb?.balance = sessionData![0].reverbAmount
+                //summingReverb?.rampDuration = Float(2.0)
+                //summingReverb?.$amplitude.ramp(to: 0.9, duration: 1.2)
                 
-                fmOscBankKey.attackDuration = sessionData![0].attackDuration
-                fmOscPreview.attackDuration = sessionData![0].attackDuration
+                summingReverb?.feedback = Float(0.9)
+                dryWetMixerSummingReverb?.balance = Float(sessionData![0].reverbAmount)
+                
+                fmOscBankKey.attackDuration = Float(sessionData![0].attackDuration)
+                fmOscPreview.attackDuration = Float(sessionData![0].attackDuration)
 
-                fmOscBankKey.decayDuration = sessionData![0].decayDuration
-                fmOscPreview.decayDuration = sessionData![0].decayDuration
+                fmOscBankKey.decayDuration = Float(sessionData![0].decayDuration)
+                fmOscPreview.decayDuration = Float(sessionData![0].decayDuration)
 
-                fmOscBankKey.releaseDuration = sessionData![0].releaseDuration
-                fmOscPreview.releaseDuration = sessionData![0].releaseDuration
+                fmOscBankKey.releaseDuration = Float(sessionData![0].releaseDuration)
+                fmOscPreview.releaseDuration = Float(sessionData![0].releaseDuration)
             }
         }
     }
@@ -205,29 +235,42 @@ class AuOrchester {
     init() {
         print("init")
 
-        AKSettings.playbackWhileMuted = true
+        //AKSettings.playbackWhileMuted = true
+        //Settings.playbackWhileMuted = true
         
-        instrumentMixer = AKMixer(fmOscBankKey)
+        instrumentMixer = Mixer(fmOscBankKey)
         
-        fxPhaser = AKPhaser(instrumentMixer)
+        //fmOscBankKey.au.setWavetable([AUValue(1)], index: 1)
+        
+//        fmOscBankKey.decayDuration = 1000
+//        fmOscBankKey.sustainLevel = 1000
+//        fmOscBankKey.releaseDuration = 1000
+        
+        fxPhaser = Phaser(instrumentMixer)
         fxPhaser?.lfoBPM = 24
         fxPhaser?.notchWidth = 5000
         fxPhaser?.feedback = 0.5
 
         // FX Amt
-        dryWetSummingMixer = AKDryWetMixer(instrumentMixer, fxPhaser!)
+        dryWetSummingMixer = DryWetMixer(instrumentMixer, fxPhaser!)
+        
         
         // Stereo
-        summingReverb = AKCostelloReverb(dryWetSummingMixer)
-        dryWetMixerSummingReverb = AKDryWetMixer(dryWetSummingMixer!, summingReverb!)
-        AKManager.output = dryWetMixerSummingReverb
+        //summingReverb = CostelloReverb(dryWetSummingMixer)
+        summingReverb = CostelloReverb(dryWetSummingMixer! as Node)
+        
+        
+        dryWetMixerSummingReverb = DryWetMixer(dryWetSummingMixer!, summingReverb!)
+        
+        
+        engine.output = dryWetMixerSummingReverb
         
         for i in 0...256 {
             playedKeys[i] = false
         }
         
         do {
-            try AKManager.start()
+            try engine.start()
         } catch {
             print("Error: \(error)")
         }

@@ -527,6 +527,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         
         initUI()
         
+        
         if traitCollection.userInterfaceStyle == .dark {
             uiTintColorText = UIColor.white
             uiTintColor = UIColor.white

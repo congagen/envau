@@ -128,7 +128,7 @@ extension MainViewController {
         locationManager.startUpdatingLocation()
         
         if sessionData != nil {
-            MainViewController.orchester.masterMixer.volume = sessionData![0].masterVolume
+            MainViewController.orchester.masterMixer.volume = AUValue(sessionData![0].masterVolume)
         }
         
         

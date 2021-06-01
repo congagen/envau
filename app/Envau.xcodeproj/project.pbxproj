@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1627DBB9A6F901A0B76BFA12 /* Pods_Envau.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E432CA6BADA7F13CD83C4C62 /* Pods_Envau.framework */; };
 		310ECF531E9E04C300B039DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310ECF521E9E04C300B039DA /* AppDelegate.swift */; };
 		3114855D2076792E00B05438 /* MixerSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3114855C2076792E00B05438 /* MixerSettingsVC.swift */; };
 		317B53CE2091159A00396E8D /* ControlCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B53CD2091159A00396E8D /* ControlCenterViewController.swift */; };
@@ -43,10 +42,15 @@
 		31F0492F2081E89400551A09 /* RLM_SessionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F0492E2081E89400551A09 /* RLM_SessionData.swift */; };
 		31F5C8DE206AE9BF00B9AF3E /* LayersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F5C8DD206AE9BF00B9AF3E /* LayersTableViewController.swift */; };
 		31F5C8E0206AEBF400B9AF3E /* RLM_Layer_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F5C8DF206AEBF400B9AF3E /* RLM_Layer_.swift */; };
+		64E603AF2664FEDC001543E5 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 64E603AE2664FEDC001543E5 /* AudioKit */; };
+		64E603B22664FFEA001543E5 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 64E603B12664FFEA001543E5 /* RealmSwift */; };
+		64E603B42664FFEA001543E5 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 64E603B32664FFEA001543E5 /* Realm */; };
+		64E603B726654DDD001543E5 /* Drawer in Frameworks */ = {isa = PBXBuildFile; productRef = 64E603B626654DDD001543E5 /* Drawer */; };
+		64E603B9266550E8001543E5 /* DrawerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E603B8266550E8001543E5 /* DrawerView.swift */; };
+		64E603BB266551CD001543E5 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E603BA266551CD001543E5 /* SwiftUIView.swift */; };
 		FA03CAA7227B474400E0BFC3 /* EvuLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = FA03CAA6227B474300E0BFC3 /* EvuLogo.png */; };
 		FA205A9322DCBB5700FBA2EB /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA205A9222DCBB5700FBA2EB /* Launch.storyboard */; };
 		FA481E53248914A5003AEACF /* SettingsTableViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA481E52248914A5003AEACF /* SettingsTableViewCtrl.swift */; };
-		FA4BAD95227ADC8600E3FB5F /* TODO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4BAD94227ADC8600E3FB5F /* TODO.swift */; };
 		FABE367822648B7E008AB53A /* RLM_AsyncData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE367722648B7D008AB53A /* RLM_AsyncData.swift */; };
 		FABE368C22661D09008AB53A /* Envau.png in Resources */ = {isa = PBXBuildFile; fileRef = FABE368B22661D09008AB53A /* Envau.png */; };
 /* End PBXBuildFile section */
@@ -90,13 +94,11 @@
 		31F0492E2081E89400551A09 /* RLM_SessionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RLM_SessionData.swift; sourceTree = "<group>"; };
 		31F5C8DD206AE9BF00B9AF3E /* LayersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayersTableViewController.swift; sourceTree = "<group>"; };
 		31F5C8DF206AEBF400B9AF3E /* RLM_Layer_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RLM_Layer_.swift; sourceTree = "<group>"; };
-		370ABE318EF1E40D6539676D /* Pods-Envau.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Envau.debug.xcconfig"; path = "Target Support Files/Pods-Envau/Pods-Envau.debug.xcconfig"; sourceTree = "<group>"; };
-		C650CB2577AC8BCA7C2A981F /* Pods-Envau.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Envau.release.xcconfig"; path = "Target Support Files/Pods-Envau/Pods-Envau.release.xcconfig"; sourceTree = "<group>"; };
-		E432CA6BADA7F13CD83C4C62 /* Pods_Envau.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Envau.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		64E603B8266550E8001543E5 /* DrawerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerView.swift; sourceTree = "<group>"; };
+		64E603BA266551CD001543E5 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		FA03CAA6227B474300E0BFC3 /* EvuLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EvuLogo.png; sourceTree = "<group>"; };
 		FA205A9222DCBB5700FBA2EB /* Launch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Launch.storyboard; path = Assets.xcassets/00_UI/Launch.storyboard; sourceTree = "<group>"; };
 		FA481E52248914A5003AEACF /* SettingsTableViewCtrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCtrl.swift; sourceTree = "<group>"; };
-		FA4BAD94227ADC8600E3FB5F /* TODO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODO.swift; sourceTree = "<group>"; };
 		FABE367722648B7D008AB53A /* RLM_AsyncData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RLM_AsyncData.swift; sourceTree = "<group>"; };
 		FABE368B22661D09008AB53A /* Envau.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Envau.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,9 +108,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64E603B22664FFEA001543E5 /* RealmSwift in Frameworks */,
 				31BF3C9320751C0D0016A057 /* MapKit.framework in Frameworks */,
 				31BF3C9420751C120016A057 /* AudioToolbox.framework in Frameworks */,
-				1627DBB9A6F901A0B76BFA12 /* Pods_Envau.framework in Frameworks */,
+				64E603B726654DDD001543E5 /* Drawer in Frameworks */,
+				64E603AF2664FEDC001543E5 /* AudioKit in Frameworks */,
+				64E603B42664FFEA001543E5 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,11 +123,9 @@
 		310ECF461E9E04C300B039DA = {
 			isa = PBXGroup;
 			children = (
-				FA4BAD94227ADC8600E3FB5F /* TODO.swift */,
 				310ECF511E9E04C300B039DA /* Envau */,
 				310ECF501E9E04C300B039DA /* Products */,
 				310ECF641E9E04D600B039DA /* Frameworks */,
-				FD394034D0C04F0312C4D1CD /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -150,7 +153,6 @@
 			children = (
 				310ECF681E9E04D900B039DA /* AudioToolbox.framework */,
 				310ECF651E9E04D600B039DA /* MapKit.framework */,
-				E432CA6BADA7F13CD83C4C62 /* Pods_Envau.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -274,6 +276,8 @@
 		31943ED81E9E0784003E52E7 /* 02_UI */ = {
 			isa = PBXGroup;
 			children = (
+				64E603B8266550E8001543E5 /* DrawerView.swift */,
+				64E603BA266551CD001543E5 /* SwiftUIView.swift */,
 				FA03CAA6227B474300E0BFC3 /* EvuLogo.png */,
 				FABE368B22661D09008AB53A /* Envau.png */,
 				3182D0272096D8FD004E84FD /* Assets.xcassets */,
@@ -327,15 +331,6 @@
 			name = 00_Main;
 			sourceTree = "<group>";
 		};
-		FD394034D0C04F0312C4D1CD /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				370ABE318EF1E40D6539676D /* Pods-Envau.debug.xcconfig */,
-				C650CB2577AC8BCA7C2A981F /* Pods-Envau.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -343,17 +338,21 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 310ECF611E9E04C300B039DA /* Build configuration list for PBXNativeTarget "Envau" */;
 			buildPhases = (
-				4DB62BF9BFFE092A850B12C8 /* [CP] Check Pods Manifest.lock */,
 				310ECF4B1E9E04C300B039DA /* Sources */,
 				310ECF4C1E9E04C300B039DA /* Frameworks */,
 				310ECF4D1E9E04C300B039DA /* Resources */,
-				E57934AF5829A232E233E438 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Envau;
+			packageProductDependencies = (
+				64E603AE2664FEDC001543E5 /* AudioKit */,
+				64E603B12664FFEA001543E5 /* RealmSwift */,
+				64E603B32664FFEA001543E5 /* Realm */,
+				64E603B626654DDD001543E5 /* Drawer */,
+			);
 			productName = Envau;
 			productReference = 310ECF4F1E9E04C300B039DA /* Envau.app */;
 			productType = "com.apple.product-type.application";
@@ -396,6 +395,11 @@
 				Base,
 			);
 			mainGroup = 310ECF461E9E04C300B039DA;
+			packageReferences = (
+				64E603AD2664FEDC001543E5 /* XCRemoteSwiftPackageReference "AudioKit" */,
+				64E603B02664FFEA001543E5 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				64E603B526654DDD001543E5 /* XCRemoteSwiftPackageReference "swiftui-drawer" */,
+			);
 			productRefGroup = 310ECF501E9E04C300B039DA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -421,51 +425,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		4DB62BF9BFFE092A850B12C8 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Envau-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E57934AF5829A232E233E438 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Envau/Pods-Envau-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Envau/Pods-Envau-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		310ECF4B1E9E04C300B039DA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -473,10 +432,12 @@
 			files = (
 				31D638B21EB20F0800E6671C /* AlertMenus.swift in Sources */,
 				3182D02D20971065004E84FD /* RLM_Session_14.swift in Sources */,
+				64E603BB266551CD001543E5 /* SwiftUIView.swift in Sources */,
 				FABE367822648B7E008AB53A /* RLM_AsyncData.swift in Sources */,
 				31943ECB1E9E070C003E52E7 /* PianoKeyCollectionViewCell.swift in Sources */,
 				3114855D2076792E00B05438 /* MixerSettingsVC.swift in Sources */,
 				31943EB81E9E0686003E52E7 /* RLM_Note.swift in Sources */,
+				64E603B9266550E8001543E5 /* DrawerView.swift in Sources */,
 				31943ED01E9E0732003E52E7 /* AuOrchester.swift in Sources */,
 				3182D02A20970FC5004E84FD /* RLM_Settings.swift in Sources */,
 				31943EB71E9E0686003E52E7 /* RLM_BeaconData.swift in Sources */,
@@ -499,7 +460,6 @@
 				31E030342089DB670092597D /* RLM_Layer_12.swift in Sources */,
 				3188E6072051C2C400EF5547 /* MainMenuViewController.swift in Sources */,
 				31943ECD1E9E070C003E52E7 /* SettingsViewController.swift in Sources */,
-				FA4BAD95227ADC8600E3FB5F /* TODO.swift in Sources */,
 				31943EC21E9E06DD003E52E7 /* AnnotationBeacon.swift in Sources */,
 				31943ED71E9E0760003E52E7 /* ViewAnimations.swift in Sources */,
 				31943EC61E9E06DD003E52E7 /* MainViewController.swift in Sources */,
@@ -619,7 +579,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -629,7 +590,6 @@
 		};
 		310ECF621E9E04C300B039DA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 370ABE318EF1E40D6539676D /* Pods-Envau.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Envau/Envau.entitlements;
@@ -645,8 +605,11 @@
 				);
 				INFOPLIST_FILE = Envau/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.127.5997;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.127.5999;
 				"OTHER_LDFLAGS[arch=*]" = "-lstdc++";
 				PRODUCT_BUNDLE_IDENTIFIER = com.abstraqata.envau;
 				PRODUCT_NAME = Envau;
@@ -659,7 +622,6 @@
 		};
 		310ECF631E9E04C300B039DA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C650CB2577AC8BCA7C2A981F /* Pods-Envau.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Envau/Envau.entitlements;
@@ -675,8 +637,11 @@
 				);
 				INFOPLIST_FILE = Envau/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.127.5997;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.127.5999;
 				"OTHER_LDFLAGS[arch=*]" = "-lstdc++";
 				PRODUCT_BUNDLE_IDENTIFIER = com.abstraqata.envau;
 				PRODUCT_NAME = Envau;
@@ -709,6 +674,56 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		64E603AD2664FEDC001543E5 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
+		64E603B02664FFEA001543E5 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.7.6;
+			};
+		};
+		64E603B526654DDD001543E5 /* XCRemoteSwiftPackageReference "swiftui-drawer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maustinstar/swiftui-drawer.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		64E603AE2664FEDC001543E5 /* AudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 64E603AD2664FEDC001543E5 /* XCRemoteSwiftPackageReference "AudioKit" */;
+			productName = AudioKit;
+		};
+		64E603B12664FFEA001543E5 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 64E603B02664FFEA001543E5 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+		64E603B32664FFEA001543E5 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 64E603B02664FFEA001543E5 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		64E603B626654DDD001543E5 /* Drawer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 64E603B526654DDD001543E5 /* XCRemoteSwiftPackageReference "swiftui-drawer" */;
+			productName = Drawer;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 310ECF471E9E04C300B039DA /* Project object */;
 }

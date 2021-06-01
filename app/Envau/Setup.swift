@@ -28,6 +28,16 @@ extension MainViewController {
             //hbgBtnCloseImage = UIImage(named: "hbg_close_w")!
         }
         
+        layerBtn.isHidden = true
+        settingsBtn.isHidden = true
+        playPauseBtn.isHidden = true
+        
+        if (playPauseBtn.isHidden) {
+            toggleUiBtn.setImage(toggleUiBtnImageUp,  for: .normal)
+        } else {
+            toggleUiBtn.setImage(toggleUiBtnImageDown,  for: .normal)
+        }
+        
         toggleSettingsView(hideView: true)
     }
     
