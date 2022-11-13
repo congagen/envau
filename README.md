@@ -1,6 +1,6 @@
 # ENVAU
 
-ENVAU is a iOS app that enables composition and playback of positional soundscapes
+ENVAU is an iOS app that enables composition and playback of positional soundscapes
 
 
 - AppStore: https://apps.apple.com/us/app/envau/id1202922995#?platform=iphone
