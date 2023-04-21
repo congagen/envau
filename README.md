@@ -7,12 +7,6 @@ ENVAU is an iOS app that enables composition and playback of positional soundsca
 - Old Repo: https://bitbucket.org/tmsnd/envau
 
 
-## Developing
-
-* Open Project
-* Update Swift Packages
-
-
 ## Usage
 
 - Press and hold to add new spheres
